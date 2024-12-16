@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Mandeep Singh Bhambra</title>
+    
+    <!-- Include GSAP and ScrollTrigger JS -->
+    <script src="Users/bs296/Downloads/13/gsap.js"></script>
+    <script src="Users/bs296/Downloads/13/gsapScrollTrigger.js"></script>
+    
+    <!-- Include Custom Scenery Scroll Animation CSS -->
+    <link rel="stylesheet" href="Users/bs296/Downloads/13/scenery-scroll-animation.css">
+
     <style>
         /* Global Styling */
         body {
@@ -117,7 +125,6 @@
             z-index: 9999; /* Make sure it stays on top */
             transition: transform 0.1s ease;
         }
-
     </style>
 </head>
 <body>
@@ -167,6 +174,12 @@
             <p><strong>Portfolio:</strong> <a class="email" href="https://www.yourportfolio.com" target="_blank">Portfolio</a></p>
         </div>
     </div>
+
+    <!-- Include Custom Scenery Scroll Animation HTML -->
+    <div id="scenery-scroll-animation-container"></div>
+    <link rel="import" href="Users/bs296/Downloads/13/scenery-scroll-animation.html">
+
+    <script src="Users/bs296/Downloads/13/scenery-scroll-animation.js"></script>
 
     <script>
         // After the animation finishes, enable scrolling
