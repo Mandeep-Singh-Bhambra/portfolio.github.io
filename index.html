@@ -57,33 +57,39 @@
         }
 
         /* Shooting Stars Background */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        body {
             background: black;
             overflow: hidden;
-            z-index: -1;
         }
 
         .shooting-star {
             position: absolute;
-            width: 3px;
+            width: 2px;
             height: 100px;
-            background: linear-gradient(to bottom, white, transparent);
-            opacity: 0.7;
-            animation: fall 4s linear infinite;
+            background: linear-gradient(-45deg, white, transparent);
+            animation: shooting 3s ease-in-out infinite;
         }
 
-        @keyframes fall {
+        @keyframes shooting {
             0% {
-                transform: translateY(-100vh) translateX(0);
+                transform: translateY(-200%) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
             }
             100% {
-                transform: translateY(100vh) translateX(50px);
+                transform: translateY(200vh) translateX(200vw);
+                opacity: 0;
             }
+        }
+
+        /* Dynamic Shooting Stars Creation */
+        .shooting-star:nth-child(2n) {
+            animation-delay: 1s;
+        }
+        .shooting-star:nth-child(3n) {
+            animation-delay: 2s;
         }
 
         /* Header */
@@ -92,19 +98,17 @@
             color: white;
             text-align: center;
             padding: 1.5rem 0;
+            z-index: 10;
+            position: relative;
         }
 
         header .profile img {
-            width: 150px;
-            height: 150px;
-            border: 3px solid #e50914;
-            border-radius: 25%; /* Snapchat-style design */
+            width: 180px;
+            height: 180px;
+            border: 5px solid white;
+            border-radius: 20px;
             margin-bottom: 1rem;
-        }
-
-        header .profile h1 {
-            margin-top: 10px;
-            font-size: 2rem;
+            box-shadow: 0px 0px 10px #e50914;
         }
 
         /* Navigation */
@@ -138,17 +142,12 @@
         }
 
         section h2 {
+            margin-bottom: 30px;
+            color: #e50914;
+        }
+
+        section p, ul {
             margin-bottom: 20px;
-            font-size: 2.5rem;
-            color: purple;
-        }
-
-        section p, section ul {
-            margin-top: 15px;
-        }
-
-        section ul {
-            list-style: none;
         }
 
         /* Footer */
@@ -166,16 +165,17 @@
         <div id="name-text">MANDEEP SINGH BHAMBRA</div>
     </div>
 
-    <!-- Shooting Stars Background -->
-    <div class="background">
-        <!-- Shooting Stars -->
-        <div class="shooting-star" style="left: 10%; animation-duration: 3s;"></div>
-        <div class="shooting-star" style="left: 25%; animation-duration: 4s;"></div>
-        <div class="shooting-star" style="left: 40%; animation-duration: 5s;"></div>
-        <div class="shooting-star" style="left: 55%; animation-duration: 6s;"></div>
-        <div class="shooting-star" style="left: 70%; animation-duration: 4s;"></div>
-        <div class="shooting-star" style="left: 85%; animation-duration: 5s;"></div>
-    </div>
+    <!-- Shooting Stars -->
+    <script>
+        const numStars = 30; // Number of shooting stars
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement("div");
+            star.className = "shooting-star";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.animationDuration = Math.random() * 2 + 2 + "s";
+            document.body.appendChild(star);
+        }
+    </script>
 
     <!-- Header -->
     <header>
@@ -199,39 +199,19 @@
     <!-- Sections -->
     <section id="summary">
         <h2>Professional Summary</h2>
-        <p>Motivated professional with extensive customer support experience. Seeking to transition into cloud computing, bringing hands-on skills in AWS, Azure, Google Cloud, Terraform, CloudFormation, Jenkins, Docker, Kubernetes, and scripting (Python, Bash). Proficient in system administration (Linux, Windows Server) and security practices (IAM, SELinux).</p>
+        <p>Motivated professional with extensive customer support experience. Seeking to transition into cloud computing, bringing hands-on skills in AWS, Azure, Google Cloud, Terraform, CloudFormation, Jenkins, Docker, Kubernetes, and scripting (Python, Bash). Proficient in system administration (Linux, Windows Server) and security practices (IAM, SELinux). Aiming to apply cloud and DevOps knowledge to build reliable, scalable infrastructures and solutions.</p>
     </section>
 
     <section id="skills">
         <h2>Key Skills</h2>
         <ul>
-            <li>Cloud Platforms: AWS, Azure, Google Cloud</li>
-            <li>DevOps Tools: Jenkins, GitLab CI, Ansible, Docker, Kubernetes</li>
+            <li>Cloud Platforms: AWS, Azure, Google Cloud, Terraform, CloudFormation</li>
             <li>Scripting & Automation: Python, Bash</li>
-            <li>Monitoring Tools: Grafana, Prometheus, ELK Stack</li>
+            <li>System Administration: Linux (RedHat, Ubuntu), Windows Server</li>
             <li>Security: IAM, SELinux, Vulnerability Management</li>
+            <li>DevOps Tools: Jenkins, GitLab CI, Ansible, Docker, Kubernetes</li>
+            <li>Monitoring Tools: Grafana, Prometheus, ELK Stack, Datadog</li>
         </ul>
-    </section>
-
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <p>Details of experience with Teleperformance and DSGMC as mentioned.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Technical Projects</h2>
-        <p>Scalable Cloud Deployment, Real-Time Monitoring, Portfolio Hosting.</p>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <p>MCA (IGNOU, Expected 2025), BCA (Kalinga University, 2022)</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:mandeepsinghbhambra1313@gmail.com">mandeepsinghbhambra1313@gmail.com</a></p>
-        <p>Phone: +91 7011449234</p>
     </section>
 
     <!-- Footer -->
