@@ -4,21 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mandeep Singh Bhambra | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0c0c0c;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .header {
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        .intro {
+            font-size: 6rem;
+            letter-spacing: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .intro span {
+            opacity: 0;
+            transform: scale(0.5);
+            animation: fadeIn 0.6s forwards, scaleIn 0.6s forwards;
+        }
+        .intro span:nth-child(odd) {
+            animation-delay: 0.3s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            0% { transform: scale(0.5); }
+            100% { transform: scale(1); }
+        }
+
+        /* Additional styling */
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .contact-info {
+            margin: 20px 0;
+        }
+        a {
+            color: #ff5733;
+            text-decoration: none;
+        }
+        .section {
+            padding: 40px 0;
+            background-color: #222;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <h1>Mandeep Singh Bhambra</h1>
             <p>Technical Associate | Cloud Computing | DevOps Enthusiast</p>
-            <div class="contact-info">
-                <p>51 Bhambra Cottage, Rameshwar Nagar, Azadpur, New Delhi, Delhi-110033, India</p>
-                <p>📞 +91 7011449234 | ✉️ mandeepsinghbhambra1313@gmail.com</p>
-                <a href="https://www.linkedin.com/in/mandeep-singh-bhambra-6b3b84267/" target="_blank">LinkedIn Profile</a>
-            </div>
         </div>
     </header>
     
+    <div class="intro">
+        <span>M</span>
+        <span>A</span>
+        <span>N</span>
+        <span>D</span>
+        <span>E</span>
+        <span>E</span>
+        <span>P</span>
+        <span>S</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+        <span>H</span>
+        <span>B</span>
+        <span>H</span>
+        <span>A</span>
+        <span>M</span>
+        <span>B</span>
+        <span>R</span>
+        <span>A</span>
+    </div>
+
     <section class="section">
         <div class="container">
             <h2>Professional Summary</h2>
@@ -31,7 +126,7 @@
     <section class="section">
         <div class="container">
             <h2>Key Skills</h2>
-            <ul class="skills-list">
+            <ul>
                 <li><strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud, Terraform, CloudFormation</li>
                 <li><strong>DevOps Tools:</strong> Jenkins, GitLab CI, Ansible, Docker, Kubernetes</li>
                 <li><strong>Scripting & Automation:</strong> Python, Bash</li>
@@ -47,7 +142,7 @@
     <section class="section">
         <div class="container">
             <h2>Professional Experience</h2>
-            <div class="experience">
+            <div>
                 <h3>Technical Associate</h3>
                 <p>Teleperformance (TP) – Gurugram, India | August 2023 – Present</p>
                 <ul>
@@ -56,7 +151,7 @@
                     <li>Engaged with customers through voice and chat channels, offering clear, concise information and assisting with both technical and non-technical concerns.</li>
                 </ul>
             </div>
-            <div class="experience">
+            <div>
                 <h3>Advisor</h3>
                 <p>DSGMC – New Delhi, India | August 2020 – May 2023</p>
                 <ul>
@@ -93,21 +188,21 @@
     <section class="section">
         <div class="container">
             <h2>Technical Projects</h2>
-            <div class="project">
+            <div>
                 <h3>Scalable Cloud Deployment</h3>
                 <ul>
                     <li>Designed and implemented a multi-cloud solution integrating AWS and Azure.</li>
                     <li>Reduced downtime during migration to under 2 hours and cut monthly costs by 30%.</li>
                 </ul>
             </div>
-            <div class="project">
+            <div>
                 <h3>Real-Time Monitoring System</h3>
                 <ul>
                     <li>Built a Grafana dashboard for tracking system metrics, reducing troubleshooting time by 50%.</li>
                     <li>Enabled predictive analysis through Prometheus alerts, enhancing system reliability.</li>
                 </ul>
             </div>
-            <div class="project">
+            <div>
                 <h3>Portfolio: Hosting a Static Website on GitHub</h3>
                 <ul>
                     <li>Hosted a static website using GitHub Pages, leveraging Git for version control and GitHub for hosting.</li>
@@ -120,7 +215,7 @@
     <section class="section">
         <div class="container">
             <h2>Volunteer Experience</h2>
-            <div class="volunteer">
+            <div>
                 <h3>System Admin Volunteer</h3>
                 <p>Community Library Digitalization Project – New Delhi, India | 2021</p>
                 <ul>
@@ -129,7 +224,7 @@
                     <li>Trained library staff on managing and updating the system for sustained operations.</li>
                 </ul>
             </div>
-            <div class="volunteer">
+            <div>
                 <h3>Cybersecurity Awareness Volunteer</h3>
                 <p>Cyber Awareness Camp – New Delhi, India | 2022</p>
                 <ul>
@@ -138,7 +233,7 @@
                     <li>Conducted live demonstrations on basic cybersecurity practices for small business owners.</li>
                 </ul>
             </div>
-            <div class="volunteer">
+            <div>
                 <h3>Event Technical Support Volunteer</h3>
                 <p>Annual Tech Fest – College IT Department – Kalinga University | 2021</p>
                 <ul>
@@ -150,7 +245,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p>© 2024 Mandeep Singh Bhambra | All Rights Reserved</p>
         </div>
