@@ -3,252 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandeep Singh Bhambra | Portfolio</title>
+    <title>Portfolio - Mandeep Singh Bhambra</title>
     <style>
+        /* Global Styling */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0c0c0c;
-            color: white;
             margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #111;
+            color: #fff;
             overflow: hidden;
         }
-        .header {
-            text-align: center;
-            margin-top: 100px;
-        }
+
         h1 {
+            text-align: center;
             font-size: 3rem;
             font-weight: bold;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-        .intro {
-            font-size: 6rem;
-            letter-spacing: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 50px 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .intro span {
+            margin-top: 20%;
             opacity: 0;
-            transform: scale(0.5);
-            animation: fadeIn 0.6s forwards, scaleIn 0.6s forwards;
-        }
-        .intro span:nth-child(odd) {
-            animation-delay: 0.3s;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        @keyframes scaleIn {
-            0% { transform: scale(0.5); }
-            100% { transform: scale(1); }
+            animation: fadeIn 3s ease-in-out forwards;
         }
 
-        /* Additional styling */
         .container {
-            width: 80%;
-            margin: auto;
+            opacity: 0;
+            animation: fadeInContent 3s 3s forwards;
+            padding: 2rem;
         }
-        .contact-info {
-            margin: 20px 0;
+
+        /* Netflix Animation for Name */
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        a {
-            color: #ff5733;
+
+        /* Content Display Animation */
+        @keyframes fadeInContent {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Card Style for Portfolio Details */
+        .card {
+            background-color: #222;
+            margin: 1.5rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            color: #e50914;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Section Headers */
+        h3 {
+            font-size: 1.5rem;
+            color: #e50914;
+        }
+
+        .email {
+            color: #fff;
+            font-size: 1.1rem;
             text-decoration: none;
         }
-        .section {
-            padding: 40px 0;
-            background-color: #222;
+
+        .email:hover {
+            color: #e50914;
+            text-decoration: underline;
         }
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #111;
+
+        .portfolio-section {
+            margin: 2rem 0;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1>Mandeep Singh Bhambra</h1>
-            <p>Technical Associate | Cloud Computing | DevOps Enthusiast</p>
-        </div>
-    </header>
-    
-    <div class="intro">
-        <span>M</span>
-        <span>A</span>
-        <span>N</span>
-        <span>D</span>
-        <span>E</span>
-        <span>E</span>
-        <span>P</span>
-        <span>S</span>
-        <span>I</span>
-        <span>N</span>
-        <span>G</span>
-        <span>H</span>
-        <span>B</span>
-        <span>H</span>
-        <span>A</span>
-        <span>M</span>
-        <span>B</span>
-        <span>R</span>
-        <span>A</span>
-    </div>
+    <!-- Name Animation -->
+    <h1>MANDEEP SINGH BHAMBRA</h1>
 
-    <section class="section">
-        <div class="container">
+    <!-- Portfolio Content -->
+    <div class="container">
+        <!-- Professional Summary Section -->
+        <div class="card">
             <h2>Professional Summary</h2>
-            <p>
-                Motivated professional with extensive customer support experience. Seeking to transition into cloud computing, bringing hands-on skills in AWS, Azure, Google Cloud, Terraform, CloudFormation, Jenkins, Docker, Kubernetes, and scripting (Python, Bash). Proficient in system administration (Linux, Windows Server) and security practices (IAM, SELinux). Aiming to apply cloud and DevOps knowledge to build reliable, scalable infrastructures and solutions.
-            </p>
+            <p>Motivated professional with extensive customer support experience. Seeking to transition into cloud computing, bringing hands-on skills in AWS, Azure, Google Cloud, Terraform, CloudFormation, Jenkins, Docker, Kubernetes, and scripting (Python, Bash). Proficient in system administration (Linux, Windows Server) and security practices (IAM, SELinux). Aiming to apply cloud and DevOps knowledge to build reliable, scalable infrastructures and solutions.</p>
         </div>
-    </section>
-    
-    <section class="section">
-        <div class="container">
+
+        <!-- Key Skills Section -->
+        <div class="card portfolio-section">
             <h2>Key Skills</h2>
             <ul>
-                <li><strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud, Terraform, CloudFormation</li>
-                <li><strong>DevOps Tools:</strong> Jenkins, GitLab CI, Ansible, Docker, Kubernetes</li>
-                <li><strong>Scripting & Automation:</strong> Python, Bash</li>
-                <li><strong>Monitoring Tools:</strong> Grafana, Prometheus, ELK Stack, Datadog</li>
-                <li><strong>System Administration:</strong> Linux (RedHat, Ubuntu), Windows Server</li>
-                <li><strong>Security:</strong> IAM, SELinux, Vulnerability Management</li>
-                <li><strong>Virtualization:</strong> VMware, KVM</li>
-                <li><strong>Version Control:</strong> Git, Jira, Confluence</li>
+                <li>Cloud Platforms: AWS, Azure, Google Cloud, Terraform, CloudFormation</li>
+                <li>Scripting & Automation: Python, Bash</li>
+                <li>System Administration: Linux (RedHat, Ubuntu), Windows Server</li>
+                <li>Security: IAM, SELinux, Vulnerability Management</li>
+                <li>DevOps Tools: Jenkins, GitLab CI, Ansible, Docker, Kubernetes</li>
+                <li>Monitoring Tools: Grafana, Prometheus, ELK Stack, Datadog</li>
+                <li>Version Control: Git, Jira, Confluence</li>
+                <li>Virtualization: VMware, KVM</li>
             </ul>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div>
-                <h3>Technical Associate</h3>
-                <p>Teleperformance (TP) – Gurugram, India | August 2023 – Present</p>
-                <ul>
-                    <li>Delivered exceptional customer support by resolving account and billing inquiries, ensuring accurate and timely solutions to enhance customer satisfaction.</li>
-                    <li>Addressed and troubleshooted in-game technical issues, providing effective solutions to improve user experience and minimize disruptions.</li>
-                    <li>Engaged with customers through voice and chat channels, offering clear, concise information and assisting with both technical and non-technical concerns.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Advisor</h3>
-                <p>DSGMC – New Delhi, India | August 2020 – May 2023</p>
-                <ul>
-                    <li>Provided customer support via voice and chat, addressing inquiries and offering timely solutions.</li>
-                    <li>Assisted customers with medication details and online order placements.</li>
-                    <li>Delivered clear, efficient guidance to enhance customer experience and resolve concerns.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
+        <!-- Certifications Section -->
+        <div class="card">
             <h2>Certifications</h2>
             <ul>
-                <li>AWS Certified Solutions Architect Associate - AWS</li>
-                <li>Red Hat Certified System Administrator (RHCSA) - Ducat</li>
-                <li>Google Analytics Certified Professional - Udemy</li>
-                <li>Career Essentials in GitHub Professional Certificate - GitHub</li>
+                <li>AWS Certified Solutions Architect Associate -- AWS</li>
+                <li>Red Hat Certified System Administrator (RHCSA) --Ducat</li>
+                <li>Google Analytics Certified Professional -- Udemy</li>
+                <li>Career Essentials in GitHub Professional Certificate -- GitHub</li>
             </ul>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <h2>Education</h2>
-            <ul>
-                <li><strong>Master of Computer Applications (MCA) (In Progress)</strong> - Kalinga University (Expected Graduation: 2025)</li>
-                <li><strong>Bachelor of Computer Applications (BCA) (Completed)</strong> - Kalinga University (Graduation: 2022)</li>
-            </ul>
+        <!-- Contact Info Section -->
+        <div class="card portfolio-section">
+            <h2>Contact Information</h2>
+            <p><strong>Phone:</strong> +91 7011449234</p>
+            <p><strong>Email:</strong> <a class="email" href="mailto:mandeepsinghbhambra1313@gmail.com">mandeepsinghbhambra1313@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a class="email" href="https://www.linkedin.com/in/mandeepsinghbhambra" target="_blank">LinkedIn Profile</a></p>
+            <p><strong>Portfolio:</strong> <a class="email" href="https://www.yourportfolio.com" target="_blank">Portfolio</a></p>
         </div>
-    </section>
+    </div>
 
-    <section class="section">
-        <div class="container">
-            <h2>Technical Projects</h2>
-            <div>
-                <h3>Scalable Cloud Deployment</h3>
-                <ul>
-                    <li>Designed and implemented a multi-cloud solution integrating AWS and Azure.</li>
-                    <li>Reduced downtime during migration to under 2 hours and cut monthly costs by 30%.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Real-Time Monitoring System</h3>
-                <ul>
-                    <li>Built a Grafana dashboard for tracking system metrics, reducing troubleshooting time by 50%.</li>
-                    <li>Enabled predictive analysis through Prometheus alerts, enhancing system reliability.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Portfolio: Hosting a Static Website on GitHub</h3>
-                <ul>
-                    <li>Hosted a static website using GitHub Pages, leveraging Git for version control and GitHub for hosting.</li>
-                    <li>Configured repository settings, managed website files, and resolved deployment issues for seamless web hosting.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2>Volunteer Experience</h2>
-            <div>
-                <h3>System Admin Volunteer</h3>
-                <p>Community Library Digitalization Project – New Delhi, India | 2021</p>
-                <ul>
-                    <li>Configured systems and set up a local server to digitize the library’s records.</li>
-                    <li>Deployed a searchable database for book records, improving retrieval speed by 60%.</li>
-                    <li>Trained library staff on managing and updating the system for sustained operations.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Cybersecurity Awareness Volunteer</h3>
-                <p>Cyber Awareness Camp – New Delhi, India | 2022</p>
-                <ul>
-                    <li>Organized awareness sessions on password management and phishing threats, reaching 200+ attendees.</li>
-                    <li>Assisted in creating cybersecurity posters and handouts, improving awareness within the community.</li>
-                    <li>Conducted live demonstrations on basic cybersecurity practices for small business owners.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Event Technical Support Volunteer</h3>
-                <p>Annual Tech Fest – College IT Department – Kalinga University | 2021</p>
-                <ul>
-                    <li>Managed audio-visual and IT infrastructure for the college’s annual tech fest attended by 500+ participants.</li>
-                    <li>Set up networking solutions and resolved technical issues on-site, ensuring smooth event operations.</li>
-                    <li>Designed and implemented a temporary website for event updates, receiving 2,000+ visits.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2024 Mandeep Singh Bhambra | All Rights Reserved</p>
-        </div>
-    </footer>
+    <script>
+        // Optionally, you can add more interactivity with JavaScript here.
+    </script>
 </body>
 </html>
