@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandeep Singh Bhambra - Portfolio</title>
+    <title>Portfolio - Mandeep Singh Bhambra</title>
     <style>
-        /* General Reset */
-        * {
+        /* Global Styling */
+        body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
             font-family: 'Arial', sans-serif;
+            background: #111;
+            color: #fff;
+            overflow: hidden; /* Initially hide overflow */
+            height: 100vh; /* Ensure body takes full viewport height */
+            cursor: none; /* Hide the default cursor */
         }
 
-        /* Netflix Animation */
-        #netflix-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeOut 4s ease forwards;
-            z-index: 1000;
-        }
-
-        #name-text {
-            color: #e50914;
-            font-size: 4rem;
+        h1 {
+            text-align: center;
+            font-size: 3rem;
             font-weight: bold;
-            animation: zoomIn 2s ease-in-out;
+            margin-top: 20%;
+            opacity: 0;
+            animation: fadeIn 3s ease-in-out forwards;
         }
 
-        @keyframes zoomIn {
+        .container {
+            opacity: 0;
+            animation: fadeInContent 3s 3s forwards;
+            padding: 2rem;
+        }
+
+        /* Netflix Animation for Name */
+        @keyframes fadeIn {
             0% {
                 transform: scale(0);
                 opacity: 0;
@@ -46,177 +43,161 @@
             }
         }
 
-        @keyframes fadeOut {
+        /* Content Display Animation */
+        @keyframes fadeInContent {
             0% {
-                opacity: 1;
+                opacity: 0;
             }
             100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        /* Shooting Stars Background */
-        body {
-            background: black;
-            overflow: hidden;
-        }
-
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 100px;
-            background: linear-gradient(-45deg, white, transparent);
-            animation: shooting 3s ease-in-out infinite;
-        }
-
-        @keyframes shooting {
-            0% {
-                transform: translateY(-200%) translateX(0);
-                opacity: 0;
-            }
-            50% {
                 opacity: 1;
             }
-            100% {
-                transform: translateY(200vh) translateX(200vw);
+        }
+
+        /* Card Style for Portfolio Details */
+        .card {
+            background-color: #222;
+            margin: 1.5rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            color: #e50914;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
                 opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
 
-        /* Dynamic Shooting Stars Creation */
-        .shooting-star:nth-child(2n) {
-            animation-delay: 1s;
-        }
-        .shooting-star:nth-child(3n) {
-            animation-delay: 2s;
+        /* Section Headers */
+        h3 {
+            font-size: 1.5rem;
+            color: #e50914;
         }
 
-        /* Header */
-        header {
-            background-color: purple;
-            color: white;
-            text-align: center;
-            padding: 1.5rem 0;
-            z-index: 10;
-            position: relative;
-        }
-
-        header .profile img {
-            width: 180px;
-            height: 180px;
-            border: 5px solid white;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-            box-shadow: 0px 0px 10px #e50914;
-        }
-
-        /* Navigation */
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
+        .email {
+            color: #fff;
+            font-size: 1.1rem;
             text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
         }
 
-        nav ul li a:hover {
+        .email:hover {
             color: #e50914;
+            text-decoration: underline;
         }
 
-        /* Sections */
-        section {
-            padding: 50px;
-            color: white;
-            background-color: #121212;
-            border-bottom: 2px solid #e50914;
+        .portfolio-section {
+            margin: 2rem 0;
         }
 
-        section h2 {
-            margin-bottom: 30px;
-            color: #e50914;
+        /* Custom Cursor - Spider Cursor Effect */
+        .spider-cursor {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://cdn.pixabay.com/photo/2017/12/18/21/03/spider-3029313_960_720.png');
+            background-size: cover;
+            pointer-events: none;
+            display: none; /* Initially hide the spider cursor */
+            z-index: 9999; /* Make sure it stays on top */
+            transition: transform 0.1s ease;
         }
 
-        section p, ul {
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: purple;
-            text-align: center;
-            padding: 10px;
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <!-- Netflix Animation -->
-    <div id="netflix-animation">
-        <div id="name-text">MANDEEP SINGH BHAMBRA</div>
+    <!-- Name Animation -->
+    <h1>MANDEEP SINGH BHAMBRA</h1>
+
+    <!-- Portfolio Content -->
+    <div class="container">
+        <!-- Professional Summary Section -->
+        <div class="card">
+            <h2>Professional Summary</h2>
+            <p>Motivated professional with extensive customer support experience. Seeking to transition into cloud computing, bringing hands-on skills in AWS, Azure, Google Cloud, Terraform, CloudFormation, Jenkins, Docker, Kubernetes, and scripting (Python, Bash). Proficient in system administration (Linux, Windows Server) and security practices (IAM, SELinux). Aiming to apply cloud and DevOps knowledge to build reliable, scalable infrastructures and solutions.</p>
+        </div>
+
+        <!-- Key Skills Section -->
+        <div class="card portfolio-section">
+            <h2>Key Skills</h2>
+            <ul>
+                <li>Cloud Platforms: AWS, Azure, Google Cloud, Terraform, CloudFormation</li>
+                <li>Scripting & Automation: Python, Bash</li>
+                <li>System Administration: Linux (RedHat, Ubuntu), Windows Server</li>
+                <li>Security: IAM, SELinux, Vulnerability Management</li>
+                <li>DevOps Tools: Jenkins, GitLab CI, Ansible, Docker, Kubernetes</li>
+                <li>Monitoring Tools: Grafana, Prometheus, ELK Stack, Datadog</li>
+                <li>Version Control: Git, Jira, Confluence</li>
+                <li>Virtualization: VMware, KVM</li>
+            </ul>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="card">
+            <h2>Certifications</h2>
+            <ul>
+                <li>AWS Certified Solutions Architect Associate -- AWS</li>
+                <li>Red Hat Certified System Administrator (RHCSA) --Ducat</li>
+                <li>Google Analytics Certified Professional -- Udemy</li>
+                <li>Career Essentials in GitHub Professional Certificate -- GitHub</li>
+            </ul>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="card portfolio-section">
+            <h2>Contact Information</h2>
+            <p><strong>Phone:</strong> +91 7011449234</p>
+            <p><strong>Email:</strong> <a class="email" href="mailto:mandeepsinghbhambra1313@gmail.com">mandeepsinghbhambra1313@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a class="email" href="https://www.linkedin.com/in/mandeepsinghbhambra" target="_blank">LinkedIn Profile</a></p>
+            <p><strong>Portfolio:</strong> <a class="email" href="https://www.yourportfolio.com" target="_blank">Portfolio</a></p>
+        </div>
     </div>
 
-    <!-- Shooting Stars -->
     <script>
-        const numStars = 30; // Number of shooting stars
-        for (let i = 0; i < numStars; i++) {
-            const star = document.createElement("div");
-            star.className = "shooting-star";
-            star.style.left = Math.random() * 100 + "vw";
-            star.style.animationDuration = Math.random() * 2 + 2 + "s";
-            document.body.appendChild(star);
+        // After the animation finishes, enable scrolling
+        window.onload = function() {
+            setTimeout(function() {
+                document.body.style.overflow = 'auto'; // Enable scrolling after the animation ends
+                document.body.style.height = 'auto'; // Allow the body to take full height based on content
+            }, 3000); // Delay of 3 seconds (time for the name animation)
         }
+
+        // Spider cursor effect
+        let cursor = document.createElement('div');
+        cursor.classList.add('spider-cursor');
+        document.body.appendChild(cursor);
+
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.pageX - 25 + 'px';
+            cursor.style.top = e.pageY - 25 + 'px';
+            cursor.style.display = 'block'; // Show the cursor when moving the mouse
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            cursor.style.left = e.touches[0].pageX - 25 + 'px';
+            cursor.style.top = e.touches[0].pageY - 25 + 'px';
+            cursor.style.display = 'block'; // Show the cursor on touch
+        });
+
+        // Make cursor disappear when mouse leaves the page
+        document.addEventListener('mouseleave', function() {
+            cursor.style.display = 'none';
+        });
     </script>
-
-    <!-- Header -->
-    <header>
-        <div class="profile">
-            <img src="WhatsApp Image 2024-12-17 at 01.17.31_8b46c3b5.jpg" alt="Profile Picture">
-            <h1>Mandeep Singh Bhambra</h1>
-            <p>Cloud & DevOps Enthusiast</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#summary">Professional Summary</a></li>
-                <li><a href="#skills">Key Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Sections -->
-    <section id="summary">
-        <h2>Professional Summary</h2>
-        <p>Motivated professional with extensive customer support experience. Seeking to transition into cloud computing, bringing hands-on skills in AWS, Azure, Google Cloud, Terraform, CloudFormation, Jenkins, Docker, Kubernetes, and scripting (Python, Bash). Proficient in system administration (Linux, Windows Server) and security practices (IAM, SELinux). Aiming to apply cloud and DevOps knowledge to build reliable, scalable infrastructures and solutions.</p>
-    </section>
-
-    <section id="skills">
-        <h2>Key Skills</h2>
-        <ul>
-            <li>Cloud Platforms: AWS, Azure, Google Cloud, Terraform, CloudFormation</li>
-            <li>Scripting & Automation: Python, Bash</li>
-            <li>System Administration: Linux (RedHat, Ubuntu), Windows Server</li>
-            <li>Security: IAM, SELinux, Vulnerability Management</li>
-            <li>DevOps Tools: Jenkins, GitLab CI, Ansible, Docker, Kubernetes</li>
-            <li>Monitoring Tools: Grafana, Prometheus, ELK Stack, Datadog</li>
-        </ul>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Mandeep Singh Bhambra. All Rights Reserved.</p>
-    </footer>
 </body>
 </html>
