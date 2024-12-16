@@ -13,7 +13,7 @@
             color: #fff;
             overflow: hidden; /* Initially hide overflow */
             height: 100vh; /* Ensure body takes full viewport height */
-            cursor: url('https://cdn.pixabay.com/photo/2017/12/18/21/03/spider-3029313_960_720.png'), auto;
+            cursor: none; /* Hide the default cursor */
         }
 
         h1 {
@@ -113,6 +113,8 @@
             background-image: url('https://cdn.pixabay.com/photo/2017/12/18/21/03/spider-3029313_960_720.png');
             background-size: cover;
             pointer-events: none;
+            display: none; /* Initially hide the spider cursor */
+            z-index: 9999; /* Make sure it stays on top */
             transition: transform 0.1s ease;
         }
 
@@ -183,18 +185,16 @@
         document.addEventListener('mousemove', function(e) {
             cursor.style.left = e.pageX - 25 + 'px';
             cursor.style.top = e.pageY - 25 + 'px';
+            cursor.style.display = 'block'; // Show the cursor when moving the mouse
         });
 
         document.addEventListener('touchmove', function(e) {
             cursor.style.left = e.touches[0].pageX - 25 + 'px';
             cursor.style.top = e.touches[0].pageY - 25 + 'px';
+            cursor.style.display = 'block'; // Show the cursor on touch
         });
 
-        // Make cursor appear only when mouse/touch interaction starts
-        document.addEventListener('mouseenter', function() {
-            cursor.style.display = 'block';
-        });
-
+        // Make cursor disappear when mouse leaves the page
         document.addEventListener('mouseleave', function() {
             cursor.style.display = 'none';
         });
