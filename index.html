@@ -11,7 +11,8 @@
             font-family: 'Arial', sans-serif;
             background: #111;
             color: #fff;
-            overflow: hidden;
+            overflow: hidden; /* Initially hide overflow */
+            height: 100vh; /* Ensure body takes full viewport height */
         }
 
         h1 {
@@ -153,7 +154,13 @@
     </div>
 
     <script>
-        // Optionally, you can add more interactivity with JavaScript here.
+        // After the animation finishes, enable scrolling
+        window.onload = function() {
+            setTimeout(function() {
+                document.body.style.overflow = 'auto'; // Enable scrolling after the animation ends
+                document.body.style.height = 'auto'; // Allow the body to take full height based on content
+            }, 3000); // Delay of 3 seconds (time for the name animation)
+        }
     </script>
 </body>
 </html>
